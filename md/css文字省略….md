@@ -1,5 +1,6 @@
 ---
 title: css文字省略…
+date: 2017-05-13
 categories:
 - 技术
 - css

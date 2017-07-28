@@ -1,4 +1,10 @@
 title: MySql 常用指令
+date: 2017-05-13
+categories:
+- 技术
+- mysql
+tags:
+- MySql 常用指令
 ---
 ### 免密码登录
 

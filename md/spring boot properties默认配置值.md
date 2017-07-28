@@ -1,5 +1,13 @@
 ---
 title: spring boot properties默认配置值
+date: 2017-05-13
+categories:
+- 技术
+- spring boot
+tags:
+- spring
+- spring boot
+- properties
 ---
 
 ``` java

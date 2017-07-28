@@ -1,4 +1,5 @@
 title: Linux 常用指令
+date: 2017-05-13
 categories:
 - 技术
 - linux
