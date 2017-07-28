@@ -9,7 +9,7 @@ cd ${git_md_home}
 git pull
 
 cd ${blog_post_dir}
-rm rf *
+rm -rf *
 
 cp -r ${git_md_dir}/* .
 
