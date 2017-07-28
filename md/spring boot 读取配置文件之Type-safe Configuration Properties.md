@@ -1,4 +1,5 @@
 title: spring boot 读取配置文件之Type-safe Configuration Properties
+date: 2017-05-13
 categories:
 - 技术
 - spring boot
