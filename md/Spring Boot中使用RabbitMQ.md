@@ -38,7 +38,7 @@ AMQP是Advanced Message Queuing Protocol的简称，它是一个面向消息中�
 
 ### 安装
 
-在RabbitMQ官网的下载页面https://www.rabbitmq.com/download.html中，我们可以获取到针对各种不同操作系统的安装包和说明文档。这里，我们将对几个常用的平台一一说明。
+在RabbitMQ官网的下载页面 https://www.rabbitmq.com/download.html 中，我们可以获取到针对各种不同操作系统的安装包和说明文档。这里，我们将对几个常用的平台一一说明。
 
 下面我们采用的Erlang和RabbitMQ Server版本说明：
 
@@ -47,8 +47,8 @@ AMQP是Advanced Message Queuing Protocol的简称，它是一个面向消息中�
 
 ### Windows安装
 
-1. 安装Erland，通过官方下载页面http://www.erlang.org/downloads获取exe安装包，直接打开并完成安装。
-2. 安装RabbitMQ，通过官方下载页面https://www.rabbitmq.com/download.html获取exe安装包。
+1. 安装Erland，通过官方下载页面 http://www.erlang.org/downloads 获取exe安装包，直接打开并完成安装。
+2. 安装RabbitMQ，通过官方下载页面 https://www.rabbitmq.com/download.html 获取exe安装包。
 3. 下载完成后，直接运行安装程序。
 4. RabbitMQ Server安装完成之后，会自动的注册为服务，并以默认配置启动起来。
 
