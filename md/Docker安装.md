@@ -3,7 +3,6 @@ title: Docker安装
 date: 2017-11-02
 categories:
 - 技术
-- linux
 - docker
 tags:
 - linux
