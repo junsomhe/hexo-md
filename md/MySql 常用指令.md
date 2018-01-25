@@ -28,6 +28,18 @@ tags:
 
 `grant all privileges on *.* to 'root'@'%';`
 
+### 撤销授权
+
+`revoke all on *.* from dba@localhost;`
+
+### 显示用户权限
+
+`show grants for 'root'@'%';`
+
+### 刷新权限
+
+`flush privileges;`
+
 ### 权限列表
 - Alter         修改表和索引
 - Create        创建数据库和表
@@ -45,8 +57,5 @@ tags:
 - ALL           所有；ALLPRIVILEGES同义词
 - USAGE         特殊的“无权限”权限
 
-### 刷新权限
-
-`flush privileges;`
 
 
