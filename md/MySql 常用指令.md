@@ -28,6 +28,23 @@ tags:
 
 `grant all privileges on *.* to 'root'@'%';`
 
+### 权限列表
+- Alter         修改表和索引
+- Create        创建数据库和表
+- Delete        删除表中已有的记录
+- Drop          抛弃（删除）数据库和表
+- INDEX         创建或抛弃索引
+- Insert        向表中插入新行
+- REFERENCE     未用
+- Select        检索表中的记录
+- Update        修改现存表记录
+- FILE          读或写服务器上的文件
+- PROCESS       查看服务器中执行的线程信息或杀死线程
+- RELOAD        重载授权表或清空日志、主机缓存或表缓存。
+- SHUTDOWN      关闭服务器
+- ALL           所有；ALLPRIVILEGES同义词
+- USAGE         特殊的“无权限”权限
+
 ### 刷新权限
 
 `flush privileges;`
