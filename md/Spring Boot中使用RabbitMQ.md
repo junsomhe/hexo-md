@@ -102,7 +102,7 @@ Applying plugin configuration to rabbit@PC-201602152056... started 6 plugins.
 ```
 
 - 打开浏览器并访问：`http://localhost:15672/`，并使用默认用户`guest`登录，密码也为`guest`。我们可以看到如下图的管理页面：
-![image](http://blog.didispace.com/assets/5-2.png)
+![image](https://cdn.xiangyingbaobao.com/xybb/portal/2018/5/263aab74d50ee4dd1e67a5ea62784b5a.png)
 
 从图中，我们可以看到之前章节中提到的一些基本概念，比如：Connections、Channels、Exchanges、Queue等。第一次使用的读者，可以都点开看看都有些什么内容，熟悉一下RabbitMQ Server的服务端。
 
