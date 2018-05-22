@@ -15,5 +15,7 @@ cp -r ${git_md_dir}/* .
 
 cd ${blog_home}
 
-hexo clean generate
+hexo clean
+hexo generate
+
 
