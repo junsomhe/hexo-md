@@ -15,33 +15,7 @@ tags:
 这是一个类似于google加载图标的css3动画实现
 
 ## 效果演示
-<style>
-    @keyframes color {
-        100%, 0% {
-            stroke: #9c27b0;
-        }
-        50% {
-            stroke: #ff9800;
-        }
-        100% {
-            stroke: #9c27b0;
-        }
-    }
-    @keyframes dash {
-        0% {
-            stroke-dasharray: 1, 200;
-            stroke-dashoffset: 0;
-        }
-        50% {
-            stroke-dasharray: 89, 200;
-            stroke-dashoffset: -35px;
-        }
-        100% {
-            stroke-dasharray: 89, 200;
-            stroke-dashoffset: -124px;
-        }
-
-    }
+<style>@keyframes color {100%, 0% {stroke: #9c27b0;}50% {stroke: #ff9800;}100% {stroke: #9c27b0;}}@keyframes dash {0% {stroke-dasharray: 1, 200;stroke-dashoffset: 0;}50% {stroke-dasharray: 89, 200;stroke-dashoffset: -35px;}100% {stroke-dasharray: 89, 200;stroke-dashoffset: -124px;}}
     .loader:before {
         content: '';
         display: block;
@@ -59,6 +33,7 @@ tags:
         transform: translate3d(0, -50%, 0);
         text-align: center;
         top: 50%;
+        height: 60px;
     }
     .circular {
         -webkit-animation: rotate 2s linear infinite;
@@ -82,8 +57,10 @@ tags:
         stroke-linecap: round;
     }
 </style>
-<div class="loader">
-    <svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle></svg>
+<div style='position: relative;width: 100%;height: 60px;'>
+    <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle></svg>
+    </div>
 </div>
 
 ## 源码
