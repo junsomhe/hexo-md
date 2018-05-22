@@ -15,7 +15,8 @@ tags:
 这是一个类似于google加载图标的css3动画实现
 
 ## 效果演示
-<style>@keyframes color {100%, 0% {stroke: #9c27b0;}50% {stroke: #ff9800;}100% {stroke: #9c27b0;}}@keyframes dash {0% {stroke-dasharray: 1, 200;stroke-dashoffset: 0;}50% {stroke-dasharray: 89, 200;stroke-dashoffset: -35px;}100% {stroke-dasharray: 89, 200;stroke-dashoffset: -124px;}}
+<style>@keyframes color {100%, 0% {stroke: #9c27b0;}50% {stroke: #ff9800;}100% {stroke: #9c27b0;}}@keyframes dash {0% {stroke-dasharray: 1, 200;stroke-dashoffset: 0;}50% {stroke-dasharray: 89, 200;stroke-dashoffset: -35px;}100% {stroke-dasharray: 89, 200;stroke-dashoffset: -124px;}}</style>
+<style>
     .loader:before {
         content: '';
         display: block;
