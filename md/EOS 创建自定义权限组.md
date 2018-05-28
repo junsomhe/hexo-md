@@ -16,7 +16,8 @@ eos github上的wiki文档并没有给出创建自定义权限的命令行例子
 
 ## 创建自定义权限
 ```bash
-cleos set account permission testera data.rss '{"threshold":1,"keys":[],"accounts":[{"permission":{"actor":"tester1a","permission":"active"},"weight":1},{"permission":{"actor":"tester2a","permission":"active"},"weight":50}],"permissions":[{"perm_name":"data.rss","parent":"active"}]}' active
+cleos set account permission testera data.rss 
+\'{"threshold":1,"keys":[],"accounts":[{"permission":{"actor":"tester1a","permission":"active"},"weight":1},{"permission":{"actor":"tester2a","permission":"active"},"weight":50}],"permissions":[{"perm_name":"data.rss","parent":"active"}]}' active
 ```
 
 结果如下
