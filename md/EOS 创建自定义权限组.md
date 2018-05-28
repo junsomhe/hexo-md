@@ -43,4 +43,4 @@ cpu bandwidth: (averaged over 3 days)
 ```
 
 ## 扩展
-Shell 中的`"permission":"active"},"weight":50}]`这部分代码其实可以省略。省略后指令和修改权限已经没什么区别了，所以其实并不存在所谓创建权限，只要修改权限时赋值的权限不存在，自动会创建此权限。
+Shell 中的`"permissions":[{"perm_name":"data.rss","parent":"active"}]`这部分代码其实可以省略。省略后指令和修改权限已经没什么区别了，所以其实并不存在所谓创建权限，只要修改权限时赋值的权限不存在，自动会创建此权限。
