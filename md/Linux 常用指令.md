@@ -12,3 +12,8 @@ tags:
 
 ## 查看端口占用
 `netstat -anp | grep 80`
+
+## 开机启动 systemctl
+`systemctl enable mariadb.service`
+
+`mariadb.service` 换成你需要开机启动的服务即可。
