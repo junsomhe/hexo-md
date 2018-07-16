@@ -1,6 +1,6 @@
 ---
 title: EOS 常见错误
-date: 2018-05-28
+date: 2018-07-16
 categories:
 - 技术
 - eos
