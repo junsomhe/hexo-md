@@ -12,37 +12,41 @@ tags:
 
 ## 引入插件
 首先在`build.gradle`中引入`maven-publish`插件
+```dtd
+apply plugin: "maven-publish"
+```
 
 ## 设置一些必要的参数
 ```dtd
 //设置动态属性
 ext {
-//发布到仓库用户名
-publishUserName = "adjunsommin"
-//发布到仓库地址
-publishUserPassword = "pwssword"
-//仓库地址
-publishURL = "http://maven.junsom.com/repository/junsom-release/"
-
-apiBaseJarName = "junsom-some-code"
-apiBaseJarVersion = '0.0.1'
-builtBy = "gradle 4.8"
+    //发布到仓库用户名
+    publishUserName = "adjunsommin"
+    //发布到仓库地址
+    publishUserPassword = "pwssword"
+    //仓库地址
+    publishURL = "http://maven.junsom.com/repository/junsom-release/"
+    
+    apiBaseJarName = "junsom-some-code"
+    apiBaseJarVersion = '0.0.1'
+    builtBy = "gradle 4.8"
 }
 ```
 
 ## 打包class文件
+
 ```dtd
 //jar包名称组成：[baseName]-[appendix]-[version]-[classifier].[extension]
 //打包class文件
 task apiBaseJar(type: Jar) {
-version apiBaseJarVersion
-baseName apiBaseJarName
-from sourceSets.main.output
-destinationDir file("$buildDir/api-libs")
-includes['com/junsom/**']
-manifest {
-attributes 'packageName': apiBaseJarName, 'Built-By': builtBy, 'Built-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version
-}
+    version apiBaseJarVersion
+    baseName apiBaseJarName
+    from sourceSets.main.output
+    destinationDir file("$buildDir/api-libs")
+    includes['com/junsom/**']
+    manifest {
+        attributes 'packageName': apiBaseJarName, 'Built-By': builtBy, 'Built-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version
+    }
 }
 ```
 
@@ -50,15 +54,15 @@ attributes 'packageName': apiBaseJarName, 'Built-By': builtBy, 'Built-date': new
 ```dtd
 //打包源码
 task apiBaseSourceJar(type: Jar) {
-version apiBaseJarVersion
-baseName apiBaseJarName
-classifier "sources"
-from sourceSets.main.allSource
-destinationDir file("$buildDir/api-libs")
-includes['com/junsom/**']
-manifest {
-attributes 'packageName': apiBaseJarName + '-sources', 'Built-By': builtBy, 'Built-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version
-}
+    version apiBaseJarVersion
+    baseName apiBaseJarName
+    classifier "sources"
+    from sourceSets.main.allSource
+    destinationDir file("$buildDir/api-libs")
+    includes['com/junsom/**']
+    manifest {
+    attributes 'packageName': apiBaseJarName + '-sources', 'Built-By': builtBy, 'Built-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version
+    }
 }
 ```
 
@@ -67,26 +71,24 @@ attributes 'packageName': apiBaseJarName + '-sources', 'Built-By': builtBy, 'Bui
 ```dtd
 //上传jar包
 publishing {
-publications {
-mavenJava(MavenPublication) {
-groupId 'com.wenfex.xybb'
-artifactId apiBaseJarName
-version apiBaseJarVersion
-
-from components.java
-
-artifacts = [apiBaseJar, apiBaseSourceJar]
-}
-}
-repositories {
-maven {
-url publishURL
-credentials {
-username = publishUserName
-password = publishUserPassword
-}
-}
-}
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'com.wenfex.xybb'
+            artifactId apiBaseJarName
+            version apiBaseJarVersion
+            from components.java
+            artifacts = [apiBaseJar, apiBaseSourceJar]
+        }
+    }
+    repositories {
+        maven {
+            url publishURL
+            credentials {
+                username = publishUserName
+                password = publishUserPassword
+            }
+        }
+    }
 }
 ```
 执行指令，先查询上传可用指令
