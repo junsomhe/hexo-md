@@ -43,7 +43,7 @@ task apiBaseJar(type: Jar) {
     baseName apiBaseJarName
     from sourceSets.main.output
     destinationDir file("$buildDir/api-libs")
-    includes['com/junsom/**']
+    includes ['com/junsom/**']
     manifest {
         attributes 'packageName': apiBaseJarName, 'Built-By': builtBy, 'Built-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version
     }
@@ -59,7 +59,7 @@ task apiBaseSourceJar(type: Jar) {
     classifier "sources"
     from sourceSets.main.allSource
     destinationDir file("$buildDir/api-libs")
-    includes['com/junsom/**']
+    includes ['com/junsom/**']
     manifest {
     attributes 'packageName': apiBaseJarName + '-sources', 'Built-By': builtBy, 'Built-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version
     }
