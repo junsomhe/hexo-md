@@ -10,6 +10,12 @@ tags:
 - 误删
 ---
 
+## 查看文件删除记录
+
+```bash
+git log --diff-filter=D --summary
+```
+
 ## git恢复远程误删除文件
 
 将本地分支 `checkout`到删除文件前的版本
