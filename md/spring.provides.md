@@ -1,6 +1,6 @@
 ---
 title: spring.provides
-date: 201-01-10
+date: 2019-01-10
 categories:
 - 技术
 - java
