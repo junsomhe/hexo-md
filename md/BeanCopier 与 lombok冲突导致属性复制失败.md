@@ -15,8 +15,7 @@ tags:
 都是null的。
 
 ## 推测原因
-`@Accessors(chain = true)` 的作用是将 `setter` 方法的返回值由 `void` 修改为 `this`。 这导致 `setter` 的方法签名改变，最终导致
- `BeanCopier` 无法识别现有的 `setter` 方法。
+`@Accessors(chain = true)` 的作用是将 `setter` 方法的返回值由 `void` 修改为 `this`。 这导致 `setter` 的方法签名改变，最终导致 `BeanCopier` 无法识别现有的 `setter` 方法。
  
  ## 解决方案
  
