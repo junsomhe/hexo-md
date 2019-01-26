@@ -7,7 +7,7 @@ categories:
 tags:
 - BeanCopier
 - lombok
-- @Accessors(chain = true)
+- Accessors(chain = true)
 ---
 
 ## 缘由
