@@ -2,7 +2,7 @@ title: Maven指令上传jar包到仓库
 date: 2018-03-22
 categories:
 - 技术
-- java
+- maven
 tags:
 - maven mvn 上传jar包到仓库
 ---
