@@ -19,3 +19,9 @@ turbine 服务器会抛弃过时的数据。当服务器时间不一致时，你
 ### 如何解决这种异常
 - 同步时间。最简单实用的处理方法
 - 添加 `turbine.InstanceMonitor.eventStream.skipLineLogic.enabled=false` 到你的 `application.yml` 或 `application.properties`
+
+## 参考
+https://github.com/spring-cloud/spring-cloud-netflix/issues/820
+https://stackoverflow.com/questions/28973994/spring-cloud-turbine-empty-stream
+
+
