@@ -19,8 +19,7 @@ tags:
 - kibana https://www.elastic.co/cn/downloads/kibana
 - filebeat https://www.elastic.co/cn/downloads/beats/filebeat
 
-## 配置软件
-### 配置`filebeat`
+## 配置`filebeat`
 `filebeat`的配置文件位置按具体的安装方式不同有所不同。假设你的安装方式是`rpm`，编辑`sudo vim /etc/filebeat/filebeat.yml`
 #### 配置所要搜集的日志文件目录
 ```yml
@@ -86,7 +85,7 @@ output.logstash:
   hosts: ["10.188.56.57:5046"]
 ```
 
-### 配置`logstash`
+## 配置`logstash`
 `logstash`配置主要是配置`logstash.conf`。`rpm`安装的话，一般在`/etc`目录下。我是`docker`安装的，目录是挂载的，没啥参考意义。
 
 #### 配置监听的`beat`端口
@@ -170,7 +169,7 @@ mutate {
   }
 ```
 
-### 配置`kibana`
+## 配置`kibana`
 `kibana`是用来展示我们的日志的，但是还是需要一些配置来获得更好的用户体验。
 这里就不上图了，列一下几个要点。
 
