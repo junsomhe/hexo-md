@@ -75,6 +75,13 @@ Caused by: java.lang.NumberFormatException: For input string: "jim"
 fields:
   service: mk-trade-service-t2
 ```
+不过上面的是全局配置，如果这台服务器只运行一个服务的话是没有问题的。如果运行多个服务，就需要另外配置。将配置移到`-type:`下面
+```yaml
+- type: log
+...
+  fields:
+    service: mk-trade-service-t2
+```
 
 #### output logstash
 定义日志输出的`logstash`地址。
