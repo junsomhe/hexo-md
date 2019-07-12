@@ -70,6 +70,8 @@ Caused by: java.lang.NumberFormatException: For input string: "jim"
 ```
 然而，匹配需要合并的行有着天然的缺陷，因为需要合并的行的样式多种多样，不可枚举。所以，我换了一种思路，指定不用合并的行，规定所有非指定行都需要合并。具体配置参考 <a href="#f-filebeat">附件 filebeat</a>
 
+官网例子：https://www.elastic.co/guide/en/beats/filebeat/current/multiline-examples.html
+
 #### 一些必要的标明日志所在服务的信息
 比如：我定义了一个`service`字段，用来表示日志所在的服务。这个字段待会会在`logstash`中使用到。
 ```yaml
@@ -245,7 +247,7 @@ filebeat.inputs:
   # for Java Stack Traces or C-Line Continuation
 
   # The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
-  multiline.pattern: '%{YEAR}-%{MONTHNUM}-%{MONTHDAY}[T ]%{HOUR}:?%{MINUTE}(?::?%{SECOND})'
+  multiline.pattern: '^\d{2,4}-0[1-9]|1[0-2]-(?:(?:0[1-9])|(?:[12][0-9])|(?:3[01])|[1-9])'
 
   # Defines if the pattern set under pattern should be negated or not. Default is false.
   multiline.negate: true
@@ -264,7 +266,7 @@ filebeat.inputs:
   paths:
   - /arthas/sites/log/mk-trade-job/*.log
 
-  multiline.pattern: '%{YEAR}-%{MONTHNUM}-%{MONTHDAY}[T ]%{HOUR}:?%{MINUTE}(?::?%{SECOND})'
+  multiline.pattern: '^\d{2,4}-0[1-9]|1[0-2]-(?:(?:0[1-9])|(?:[12][0-9])|(?:3[01])|[1-9])'
   multiline.negate: true
   multiline.match: after
   fields:
