@@ -68,6 +68,7 @@ Caused by: java.lang.NumberFormatException: For input string: "jim"
   # Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
   multiline.match: after
 ```
+然而，匹配需要合并的行有着天然的缺陷，因为需要合并的行的样式多种多样，不可枚举。所以，我换了一种思路，指定不用合并的行，规定所有非指定行都需要合并。具体配置参考 <a href="#f-filebeat">附件 filebeat</a>
 
 #### 一些必要的标明日志所在服务的信息
 比如：我定义了一个`service`字段，用来表示日志所在的服务。这个字段待会会在`logstash`中使用到。
@@ -187,7 +188,7 @@ mutate {
 
 ## 附件：java日志配置最佳实践
 
-#### filebeat
+#### filebeat<a name="f-filebeat"/>
 filebeat.yml
 ```yaml
 ###################### Filebeat Configuration Example #########################
