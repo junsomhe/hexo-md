@@ -1,6 +1,6 @@
 ---
 title: Feign传参与Spring MVC的一些区别
-date: 2019-04-15
+date: 2019-08-05
 categories:
 - 技术
 - spring cloud
@@ -39,3 +39,6 @@ void updateGroupPurchaseInfo(@RequestBody UpdateGroupPurchaseInfoReqDTO updateGr
 ### @RequestParam 注解
 参数为 `@RequestParam` 时，必须指定参数名称，即使 `@RequestParam("orderId")` 与对象的名称一致。
 当注解为` @RequestParam("orderId") Long oid`, 注解名称与参数名称不一致时，实现方法也必须添加 `@RequestParam("orderId")`
+
+### @PathVariable 注解
+参数为 `@PathVariable` 时，必须指定参数名称 接口和接口的实现方法必须都加注解。 例如：`@PathVariable("zoneId") Integer zoneId`
