@@ -132,6 +132,7 @@ filter {
   date {
     match => ["timestamp", "yyyy-MM-dd HH:mm:ss SSS"]
     target => "@timestamp"
+    timezone =>"+08:00"
   }
   mutate {
     remove_field => ["timestamp"]
