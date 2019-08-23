@@ -58,10 +58,10 @@ Caused by: java.lang.NumberFormatException: For input string: "jim"
 如下配置可以将日志和这些堆栈信息视为同一条记录：
 ```yaml
   # The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
-  multiline.pattern: '^[[:space:]]+(at|\.{3}\s+\d+\s+more)|^Caused by:'
+  multiline.pattern: '^\d{2,4}-0[1-9]|1[0-2]-(?:(?:0[1-9])|(?:[12][0-9])|(?:3[01])|[1-9])'
 
   # Defines if the pattern set under pattern should be negated or not. Default is false.
-  multiline.negate: false
+  multiline.negate: true
 
   # Match can be set to "after" or "before". It is used to define if lines should be append to a pattern
   # that was (not) matched before or after or as long as a pattern is not matched based on negate.
@@ -92,7 +92,7 @@ fields:
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["10.188.56.57:5046"]
+  hosts: ["10.188.56.57:5044"]
 ```
 
 ## 配置`logstash`
@@ -165,11 +165,12 @@ Caused by: java.lang.NumberFormatException: For input string: "jim"
 ```
 推荐一个在线测试grok的网站：http://grokconstructor.appspot.com/do/match#result
 
-下面这个作用是用提取的`timestamp` 替换 `@timestamp`字段，目的就是为了让`@timestamp`（这个字段会自动生成，使用的是收集日志的时间，和日志时间会有一点误差）的时间和日志时间完全一致
+下面这个作用是用提取的`timestamp` 替换 `@timestamp`字段，目的就是为了让`@timestamp`（这个字段会自动生成，使用的是收集日志的时间，和日志时间会有一点误差）的时间和日志时间完全一致。timezone 指的是时间的时区，我们当然是 `+08:00`
 ```yaml
 date {
     match => ["timestamp", "yyyy-MM-dd HH:mm:ss SSS"]
     target => "@timestamp"
+    timezone =>"+08:00"
   }
 ```
 
@@ -369,7 +370,7 @@ setup.kibana:
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["10.188.56.57:5046"]
+  hosts: ["10.188.56.57:5044"]
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
